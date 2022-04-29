@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mywebtoon-dev-171245-authRole",
+      "UnauthRoleArn": "arn:aws:iam::337417381762:role/amplify-mywebtoon-dev-171245-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::337417381762:role/amplify-mywebtoon-dev-171245-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-mywebtoon-dev-171245-deployment",
+      "UnauthRoleName": "amplify-mywebtoon-dev-171245-unauthRole",
+      "StackName": "amplify-mywebtoon-dev-171245",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:337417381762:stack/amplify-mywebtoon-dev-171245/ba5dd680-c609-11ec-ab7e-02112eb8656c",
+      "AmplifyAppId": "d3n7vos4fi0frh"
+    },
+    "categories": {
+      "auth": {
+        "mywebtoon80a50d67": {}
+      }
+    }
+  }
+}
