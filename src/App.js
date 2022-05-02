@@ -24,6 +24,7 @@ import ComicsList from './queries/ComicsList';
 //Import Amplify
 import Amplify from 'aws-amplify';
 import awsmobile from './aws-exports';
+// import { withAuthenticator } from 'aws-amplify-react';
 Amplify.configure(awsmobile);
 
 const mainpages = [
@@ -70,7 +71,7 @@ function PageRoutes(props) {
       ))}
 
       { comics.map((comic) => (
-      <Route key={comic.id} path={'/comics/' + comic.id} element= { <ComicDashboard comic={comic}/>}
+      <Route key={comic.id} path={'/comics/' + comic.title.toLowerCase().replace(/\s/g, '-')} element= { <ComicDashboard comic={comic}/>}
       />
       ))}
     </Routes>
@@ -96,3 +97,4 @@ function App() {
 }
 
 export default App;
+// export default withAuthenticator(App, {includeGreetings: true});

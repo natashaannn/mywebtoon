@@ -12,7 +12,7 @@ function FeaturedComic(props) {
 
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href={'/comics/' + comic.id}>
+      <CardActionArea component="a" href={'/comics/' + comic.title.toLowerCase().replace(/\s/g, '-')}>
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">

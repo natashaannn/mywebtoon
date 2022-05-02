@@ -1,24 +1,6 @@
 {
-  "api": {
-    "mywebtoon": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
-            }
-          },
-          "additionalAuthenticationProviders": []
-        }
-      }
-    }
-  },
   "auth": {
-    "mywebtoon80a50d67": {
+    "mywebtoone2553802": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -43,11 +25,22 @@
       }
     }
   },
-  "storage": {
-    "s30d5d3a5a": {
-      "service": "S3",
+  "api": {
+    "mywebtoon": {
+      "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "dependsOn": []
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
     }
   }
 }

@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "mywebtoon80a50d67_identitypool_80a50d67",
+    "identityPoolName": "mywebtoone2553802_identitypool_e2553802",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "mywebt80a50d67",
-    "userPoolName": "mywebtoon80a50d67_userpool_80a50d67",
+    "resourceNameTruncated": "mywebte2553802",
+    "userPoolName": "mywebtoone2553802_userpool_e2553802",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "mywebt80a50d67_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "mywebte2553802_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "80a50d67",
-    "resourceName": "mywebtoon80a50d67",
+    "sharedId": "e2553802",
+    "resourceName": "mywebtoone2553802",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "userPoolGroupList": [],

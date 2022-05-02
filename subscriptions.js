@@ -13,19 +13,12 @@ export const onCreateComic = /* GraphQL */ `
           name
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           comicEpisodesId
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -41,19 +34,12 @@ export const onUpdateComic = /* GraphQL */ `
           name
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           comicEpisodesId
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -69,19 +55,12 @@ export const onDeleteComic = /* GraphQL */ `
           name
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           comicEpisodesId
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -96,13 +75,9 @@ export const onCreateEpisode = /* GraphQL */ `
           bucket
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           episodePagesId
         }
         nextToken
-        startedAt
       }
       comic {
         id
@@ -110,19 +85,12 @@ export const onCreateEpisode = /* GraphQL */ `
         description
         episodes {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       comicEpisodesId
     }
   }
@@ -138,13 +106,9 @@ export const onUpdateEpisode = /* GraphQL */ `
           bucket
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           episodePagesId
         }
         nextToken
-        startedAt
       }
       comic {
         id
@@ -152,19 +116,12 @@ export const onUpdateEpisode = /* GraphQL */ `
         description
         episodes {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       comicEpisodesId
     }
   }
@@ -180,13 +137,9 @@ export const onDeleteEpisode = /* GraphQL */ `
           bucket
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           episodePagesId
         }
         nextToken
-        startedAt
       }
       comic {
         id
@@ -194,19 +147,12 @@ export const onDeleteEpisode = /* GraphQL */ `
         description
         episodes {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       comicEpisodesId
     }
   }
@@ -226,7 +172,6 @@ export const onCreatePage = /* GraphQL */ `
         name
         pages {
           nextToken
-          startedAt
         }
         comic {
           id
@@ -234,22 +179,13 @@ export const onCreatePage = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         comicEpisodesId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       episodePagesId
     }
   }
@@ -269,7 +205,6 @@ export const onUpdatePage = /* GraphQL */ `
         name
         pages {
           nextToken
-          startedAt
         }
         comic {
           id
@@ -277,22 +212,13 @@ export const onUpdatePage = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         comicEpisodesId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       episodePagesId
     }
   }
@@ -312,7 +238,6 @@ export const onDeletePage = /* GraphQL */ `
         name
         pages {
           nextToken
-          startedAt
         }
         comic {
           id
@@ -320,22 +245,13 @@ export const onDeletePage = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         comicEpisodesId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       episodePagesId
     }
   }
