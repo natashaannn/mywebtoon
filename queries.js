@@ -13,12 +13,19 @@ export const getComic = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           comicEpisodesId
         }
         nextToken
+        startedAt
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -35,11 +42,48 @@ export const listComics = /* GraphQL */ `
         description
         episodes {
           nextToken
+          startedAt
         }
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncComics = /* GraphQL */ `
+  query SyncComics(
+    $filter: ModelComicFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncComics(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        title
+        description
+        episodes {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
     }
   }
 `;
@@ -54,9 +98,13 @@ export const getEpisode = /* GraphQL */ `
           bucket
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           episodePagesId
         }
         nextToken
+        startedAt
       }
       comic {
         id
@@ -64,12 +112,19 @@ export const getEpisode = /* GraphQL */ `
         description
         episodes {
           nextToken
+          startedAt
         }
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       comicEpisodesId
     }
   }
@@ -86,6 +141,7 @@ export const listEpisodes = /* GraphQL */ `
         name
         pages {
           nextToken
+          startedAt
         }
         comic {
           id
@@ -93,12 +149,61 @@ export const listEpisodes = /* GraphQL */ `
           description
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         comicEpisodesId
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncEpisodes = /* GraphQL */ `
+  query SyncEpisodes(
+    $filter: ModelEpisodeFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncEpisodes(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        pages {
+          nextToken
+          startedAt
+        }
+        comic {
+          id
+          title
+          description
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        comicEpisodesId
+      }
+      nextToken
+      startedAt
     }
   }
 `;
@@ -117,6 +222,7 @@ export const getPage = /* GraphQL */ `
         name
         pages {
           nextToken
+          startedAt
         }
         comic {
           id
@@ -124,13 +230,22 @@ export const getPage = /* GraphQL */ `
           description
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         comicEpisodesId
       }
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       episodePagesId
     }
   }
@@ -155,13 +270,63 @@ export const listPages = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          _version
+          _deleted
+          _lastChangedAt
           comicEpisodesId
         }
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         episodePagesId
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncPages = /* GraphQL */ `
+  query SyncPages(
+    $filter: ModelPageFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncPages(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        bucket
+        fullsize {
+          key
+          width
+          height
+        }
+        episode {
+          id
+          name
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          comicEpisodesId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        episodePagesId
+      }
+      nextToken
+      startedAt
     }
   }
 `;

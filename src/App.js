@@ -16,15 +16,15 @@ import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import Comics from './pages/Comics';
-import NaturalSelection from './pages/NaturalSelection';
-import FosterMonsters from './pages/FosterMonsters';
+import ComicDashboard from './pages/ComicDashboard';
+
+//Import ComicsList
+import ComicsList from './queries/ComicsList';
 
 //Import Amplify
 import Amplify from 'aws-amplify';
 import awsmobile from './aws-exports';
 Amplify.configure(awsmobile);
-
-// const comicurl = './assets/comics/fostermonsters/episode-1';
 
 const mainpages = [
   { url: '/',
@@ -45,21 +45,6 @@ const mainpages = [
   }
 ]
 
-const comicpages =[
-  { url: '/naturalselection',
-    title: 'Natural Selection',
-    import: NaturalSelection,
-    type: 'comic'
-  },
-  { url: '/fostermonsters',
-    title: 'Foster Monsters',
-    import: FosterMonsters,
-    type: 'comic'
-  }
-]
-
-const pages = mainpages.concat(comicpages);
-
 const title = "Momonoko";
 const website = "www.momonoko.com"
 
@@ -74,19 +59,35 @@ const socials = [
   }
 ]
 
-function App() {      
+function PageRoutes(props) {
+  const { comics } = props;
+  console.log(props);
+
+  return (
+    <Routes>
+      {mainpages.map( (page) => (
+        <Route key={page.title} path={page.url} element={ <page.import/> } />
+      ))}
+
+      { comics.map((comic) => (
+      <Route key={comic.id} path={'/comics/' + comic.id} element= { <ComicDashboard comic={comic}/>}
+      />
+      ))}
+    </Routes>
+  );
+};
+
+function App() {     
   return (
     <BrowserRouter>
       <ThemeProvider theme={main}>
         <React.Fragment>
             <Header title={ title } pages={ mainpages }/>
           </React.Fragment>
-      
-        <Routes>
-          {pages.map( (page) => (
-            <Route path={page.url} element={ <page.import/> } />
-          ))}
-        </Routes>
+
+          <ComicsList>
+            <PageRoutes />
+          </ComicsList>
 
         <Footer socials={ socials } website={ website }/>
       </ThemeProvider>

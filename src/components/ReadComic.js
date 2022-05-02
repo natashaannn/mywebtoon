@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Comic(props) {
+function ReadComic(props) {
     function importAll(r) {
         let images = [];
         r.keys().map((item, index) => { images.push(require(props.url + item.substring(1))) });
@@ -18,4 +18,4 @@ function Comic(props) {
         );
 }
 
-export default Comic;
+export default ReadComic;

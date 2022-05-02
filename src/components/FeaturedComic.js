@@ -12,7 +12,7 @@ function FeaturedComic(props) {
 
   return (
     <Grid item xs={12} md={6}>
-      {/* <CardActionArea component="a" href={comic.url}> */}
+      <CardActionArea component="a" href={'/comics/' + comic.id}>
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">
@@ -29,7 +29,7 @@ function FeaturedComic(props) {
             alt={comic.thumbnailLabel}
           /> */}
         </Card>
-      {/* </CardActionArea> */}
+      </CardActionArea>
     </Grid>
   );
 }
