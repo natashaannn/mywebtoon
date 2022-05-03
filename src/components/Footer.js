@@ -1,13 +1,17 @@
+//React imports
 import React from 'react';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import CssBaseline from '@mui/material/CssBaseline';
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
 
+//MUI imports
+import {
+    Container,
+    CssBaseline,
+    GlobalStyles,
+    Grid,
+    IconButton,
+    Link,
+    Stack,
+    Typography
+} from '@mui/material';
 
 function Copyright(props) {
     return (

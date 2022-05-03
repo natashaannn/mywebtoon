@@ -1,8 +1,12 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+//MUI imports
+import {
+    Box,
+    Button,
+    Container,
+    Typography
+} from '@mui/material';
 
-function ComicDashboard(props) {
+function AdminComicDashboard(props) {
      const { comic } = props;
 
      return (
@@ -12,7 +16,7 @@ function ComicDashboard(props) {
           pt: 8,
           pb: 6,
         }}
-      >
+        >
             <Container>
                 <Typography
                 component="h1"
@@ -23,6 +27,15 @@ function ComicDashboard(props) {
                 >
                 {comic.title}
                 </Typography>
+
+                <Typography variant="h4">
+                This is an admin page.
+                </Typography>
+
+                <Container>
+                    <Button variant='contained' href={'/admin/new-episode/' + comic.title.toLowerCase().replace(/\s/g, '-')}>New Episode</Button>
+                </Container>
+
                 <Typography variant="subtitle">
                     {comic.description}
                 </Typography>
@@ -32,4 +45,4 @@ function ComicDashboard(props) {
          
 }
 
-export default ComicDashboard;
+export default AdminComicDashboard;

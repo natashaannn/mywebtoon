@@ -1,18 +1,22 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+
+//MUI imports
+import { 
+  Card, 
+  CardActionArea, 
+  CardContent, 
+  CardMedia,
+  Grid, 
+  Typography
+} from '@mui/material';
 
 function FeaturedComic(props) {
-  const { comic } = props;
+  const { comic, subdirectory } = props;
 
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href={'/comics/' + comic.title.toLowerCase().replace(/\s/g, '-')}>
+      <CardActionArea component="a" href={subdirectory + comic.title.toLowerCase().replace(/\s/g, '-')}>
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">

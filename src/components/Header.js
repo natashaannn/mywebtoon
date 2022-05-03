@@ -1,9 +1,14 @@
+//React imports
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Link from '@mui/material/Link';
-import Toolbar from '@mui/material/Toolbar';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import CssBaseline from '@mui/material/CssBaseline';
+
+//MUI imports
+import {
+  AppBar,
+  CssBaseline,
+  GlobalStyles,
+  Link,
+  Toolbar
+} from '@mui/material';
 
 function Header(props) {
     return (

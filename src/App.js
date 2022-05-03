@@ -1,8 +1,11 @@
+//React imports
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 //MUI imports
 import { ThemeProvider } from '@mui/material/styles';
+
+//MUI Icon imports
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PaidIcon from '@mui/icons-material/Paid';
 
@@ -12,19 +15,21 @@ import Footer from './components/Footer';
 import main from './components/Theme';
 
 //Local page imports
-import About from './pages/About';
-import Gallery from './pages/Gallery';
-import Home from './pages/Home';
-import Comics from './pages/Comics';
-import ComicDashboard from './pages/ComicDashboard';
+import About from './pages/public/About';
+import Gallery from './pages/public/Gallery';
+import Home from './pages/public/Home';
+import Comics from './pages/public/Comics';
+import ComicDashboard from './pages/public/ComicDashboard';
+import AdminHome from './pages/admin/AdminHome';
+import AdminComicDashboard from './pages/admin/AdminComicDashboard';
+import AdminNewEpisode from './pages/admin/AdminNewEpisode';
 
-//Import ComicsList
-import ComicsList from './queries/ComicsList';
+//Import apis
+import GetComicsList from './api/GetComicsList';
 
 //Import Amplify
 import Amplify from 'aws-amplify';
 import awsmobile from './aws-exports';
-// import { withAuthenticator } from 'aws-amplify-react';
 Amplify.configure(awsmobile);
 
 const mainpages = [
@@ -46,6 +51,19 @@ const mainpages = [
   }
 ]
 
+const adminpages = [
+  { url: '/admin',
+    title: 'Admin Home',
+    import: AdminHome
+  },
+  { url: '/admin/new-episode',
+    title: 'New Episode',
+    import: AdminNewEpisode
+  },
+]
+
+const pages = mainpages.concat(adminpages);
+
 const title = "Momonoko";
 const website = "www.momonoko.com"
 
@@ -66,12 +84,26 @@ function PageRoutes(props) {
 
   return (
     <Routes>
-      {mainpages.map( (page) => (
+      {/* Routes for main pages */}
+      {pages.map( (page) => (
         <Route key={page.title} path={page.url} element={ <page.import/> } />
       ))}
 
+      {/* Public routes for comics */}
       { comics.map((comic) => (
       <Route key={comic.id} path={'/comics/' + comic.title.toLowerCase().replace(/\s/g, '-')} element= { <ComicDashboard comic={comic}/>}
+      />
+      ))}
+
+      {/* Admin routes for comics */}
+      { comics.map((comic) => (
+      <Route key={comic.id} path={'/admin/' + comic.title.toLowerCase().replace(/\s/g, '-')} element= { <AdminComicDashboard comic={comic}/>}
+      />
+      ))}
+
+      {/* Admin new episode routes for comics */}
+      { comics.map((comic) => (
+      <Route key={comic.id} path={'/admin/new-episode/' + comic.title.toLowerCase().replace(/\s/g, '-')} element= { <AdminNewEpisode comic={comic}/>}
       />
       ))}
     </Routes>
@@ -86,9 +118,9 @@ function App() {
             <Header title={ title } pages={ mainpages }/>
           </React.Fragment>
 
-          <ComicsList>
+          <GetComicsList>
             <PageRoutes />
-          </ComicsList>
+          </GetComicsList>
 
         <Footer socials={ socials } website={ website }/>
       </ThemeProvider>
@@ -97,4 +129,3 @@ function App() {
 }
 
 export default App;
-// export default withAuthenticator(App, {includeGreetings: true});

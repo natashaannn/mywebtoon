@@ -1,0 +1,14 @@
+{
+  "resourceName": "mywebtooncomicpages",
+  "policyUUID": "b4948524",
+  "bucketName": "mywebtoonc004e363d2944e36a2a53bd6760d84be",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "S3Trigger64b739f9",
+  "groupAccess": {}
+}

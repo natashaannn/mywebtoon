@@ -1,6 +1,9 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+//MUI imports
+import {
+  Box,
+  Container,
+  Typography
+} from '@mui/material';
 
 const website = {
     title: 'Momonoko',

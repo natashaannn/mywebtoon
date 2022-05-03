@@ -28,7 +28,7 @@ const SubscribeToNewComics = `
         }
     }`;
 
-function ComicsList(props) {
+function GetComicsList(props) {
     // function to get data on new comics
     const onNewComic = (prevQuery, newData) => {
         let updatedQuery = Object.assign({}, prevQuery);
@@ -51,4 +51,4 @@ function ComicsList(props) {
     );
 }
 
-export default ComicsList;
+export default GetComicsList;

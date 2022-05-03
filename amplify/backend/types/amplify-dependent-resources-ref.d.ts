@@ -16,5 +16,19 @@ export type AmplifyDependentResourcesAttributes = {
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }
+    },
+    "function": {
+        "S3Trigger64b739f9": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        }
+    },
+    "storage": {
+        "mywebtooncomicpages": {
+            "BucketName": "string",
+            "Region": "string"
+        }
     }
 }

@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "mywebtoone2553802": {}
+      },
+      "function": {
+        "S3Trigger64b739f9": {
+          "deploymentBucketName": "amplify-mywebtoon-dev-233221-deployment",
+          "s3Key": "amplify-builds/S3Trigger64b739f9-5a6e4b2f366454553674-build.zip"
+        }
       }
     }
   }
